@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加个钟 | AI时代的传播新态体</title>
+    <meta name="description" content="深圳加个钟文化传播 - 品牌传播视觉化 | 产品故事包装 | KOL生态运营 | B2B2C传播穿透 | GEO生成式引擎优化">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A855F7;
+            --pink: #EC4899;
+            --text: #1a1a2e;
+            --text-light: #64748b;
+            --bg: #FEFEFE;
+            --bg-light: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --gradient-warm: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFE66D 100%);
+            --gradient-vibe: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #FF6B6B 100%);
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: var(--bg-light);
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+        }
+
+        .lang-switch a {
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .lang-switch a.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch a:not(.active) { color: var(--text-light); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero-office.png') center/cover;
+            opacity: 0.15;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            border: 1px solid rgba(255,107,107,0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-slogan {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--gradient-warm);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--text);
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .about {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1));
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--purple);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-light);
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text h2 span {
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .about-visual img { width: 100%; display: block; }
+
+        .about-visual .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+
+        .about-visual .overlay .year { font-size: 3rem; font-weight: 900; }
+        .about-visual .overlay .text { font-size: 1rem; opacity: 0.9; }
+
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-warm);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .media {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .media-showcase {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .media-showcase img { width: 100%; border-radius: 16px; }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .media-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .media-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .media-item .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .media-item .name { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
+
+        .geo-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--bg) 0%, rgba(168,85,247,0.05) 50%, var(--bg) 100%);
+        }
+
+        .geo-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .geo-content { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .geo-text h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .geo-text h2 span {
+            background: var(--gradient-vibe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .geo-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .geo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .geo-tag {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--purple);
+            font-weight: 500;
+        }
+
+        .geo-visual {
+            position: relative;
+            height: 400px;
+            background: var(--gradient-vibe);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .geo-visual img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .geo-ai-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .geo-ai-text .big-ai { font-size: 5rem; font-weight: 900; }
+        .geo-ai-text p { font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; }
+
+        .cases {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .case-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .case-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .case-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .case-card:hover .case-img img { transform: scale(1.05); }
+
+        .case-content { padding: 1.5rem; }
+
+        .case-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .case-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--bg);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-warm);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .contact h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+
+        .contact p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-phone {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--gradient-warm);
+            color: white;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-phone:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .contact-wechat {
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.5rem; }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">加个钟</div>
+            <ul class="nav-links">
+                <li><a href="#about">公司简介</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#media">媒介</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="#contact">联系</a></li>
+                <li class="lang-switch">
+                    <a href="index.html" class="active">中文</a>
+                    <a href="en/index.html">EN</a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🚀 AI时代的传播新态体</div>
+            <h1>加个钟</h1>
+            <p class="hero-slogan">品牌传播视觉化 | 产品故事包装 | KOL生态运营 | B2B2C传播穿透</p>
+            <p class="hero-desc">
+                深圳加个钟文化传播有限公司，成立于2017年。不止是传播，更是企业品牌的内容合伙人。专注为企业提供高效的品牌整合传播服务。
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">找我们合作</a>
+                <a href="#services" class="btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">年行业经验</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">服务客户</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">媒介资源</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">AI平台覆盖</div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">关于加个钟</span>
+                <h2 class="section-title">不止是传播</h2>
+                <p class="section-desc">更是企业品牌的内容合伙人</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>我们是<span>加个钟</span></h2>
+                    <p>深圳加个钟文化传播有限公司成立于2017年，在行业中具有丰富的品牌管理与传播经验。</p>
+                    <p>公司业务涉及数字创意内容、精准口碑传播、社会化事件营销、社会化媒体运营、品牌声誉管理等，致力于把握最新营销环境，为客户提供最高效的品牌整合传播服务。</p>
+                    <p>曾经服务过IT龙头企业上市、创业公司融资、金融企业C轮等；拥有多次处理危机公关经验，帮助多个企业制定上市传播方案。</p>
+                </div>
+                <div class="about-visual">
+                    <img src="images/team-meeting.png" alt="加个钟团队">
+                    <div class="overlay">
+                        <div class="year">2017</div>
+                        <div class="text">成立于深圳 · 服务全国</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">我们的服务</span>
+                <h2 class="section-title">六大核心能力</h2>
+                <p class="section-desc">懂技术、懂产业、懂传播</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>KOL/KOC 全渠道运营</h3>
+                    <p>覆盖抖音、小红书、视频号、知乎、微博、微信、B站等主流平台，建立头部及中腰部KOL资源网络，提供从策略到执行的一站式共创式服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📰</div>
+                    <h3>新闻发布 · 全媒体矩阵</h3>
+                    <p>拥有央媒、党媒、门户网站、垂直行业媒体、财经平台等一手媒介资源，实现新闻通稿全网覆盖，打造"引爆+沉淀"全链路传播闭环。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>危机公关 · 快速响应</h3>
+                    <p>7×24小时全网舆情监测，曾为美股/港股上市企业提供全程危机公关支持，具备危机预警、快速响应、正面粉声量建设与负面压制能力。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>GEO · AI搜索优化</h3>
+                    <p>AI时代的品牌必修课。确保AI能"认识"并"记住"你的品牌，覆盖秘塔AI、Perplexity、Kimi、文心一言等10+主流AI平台。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>AI内容生产</h3>
+                    <p>借助AI辅助文案生成、多语言翻译、视频脚本优化，将内容产出周期缩短30%以上。AI+人工双把关，效率与温度并存。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>品牌策略咨询</h3>
+                    <p>从品牌定位、叙事挖掘到传播路径设计，为企业量身定制品牌传播方案。提炼合作深度，打造产业观察，建立危机预警与声誉管理机制。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="media" id="media">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">媒介资源</span>
+                <h2 class="section-title">全渠道媒体矩阵</h2>
+                <p class="section-desc">覆盖国内外主流平台，一站式投放</p>
+            </div>
+            
+            <div class="media-showcase">
+                <img src="images/media-logos.png" alt="媒体合作伙伴">
+            </div>
+
+            <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📱 社交媒体</h3>
+            <div class="media-grid" style="margin-bottom:2rem;">
+                <div class="media-item"><div class="icon">📺</div><div class="name">抖音</div></div>
+                <div class="media-item"><div class="icon">📕</div><div class="name">小红书</div></div>
+                <div class="media-item"><div class="icon">🎬</div><div class="name">视频号</div></div>
+                <div class="media-item"><div class="icon">💬</div><div class="name">微博</div></div>
+                <div class="media-item"><div class="icon">💙</div><div class="name">微信</div></div>
+                <div class="media-item"><div class="icon">🎥</div><div class="name">B站</div></div>
+                <div class="media-item"><div class="icon">❓</div><div class="name">知乎</div></div>
+                <div class="media-item"><div class="icon">📺</div><div class="name">快手</div></div>
+            </div>
+
+            <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📰 新闻媒体</h3>
+            <div class="media-grid" style="margin-bottom:2rem;">
+                <div class="media-item"><div class="icon">🌐</div><div class="name">央媒党媒</div></div>
+                <div class="media-item"><div class="icon">📢</div><div class="name">门户网站</div></div>
+                <div class="media-item"><div class="icon">💼</div><div class="name">财经媒体</div></div>
+                <div class="media-item"><div class="icon">🎮</div><div class="name">游戏媒体</div></div>
+                <div class="media-item"><div class="icon">💊</div><div class="name">医疗媒体</div></div>
+                <div class="media-item"><div class="icon">🐶</div><div class="name">宠物媒体</div></div>
+                <div class="media-item"><div class="icon">🍔</div><div class="name">食品饮料</div></div>
+                <div class="media-item"><div class="icon">💻</div><div class="name">科技媒体</div></div>
+                <div class="media-item"><div class="icon">📈</div><div class="name">金融媒体</div></div>
+                <div class="media-item"><div class="icon">🎬</div><div class="name">娱乐媒体</div></div>
+                <div class="media-item"><div class="icon">👶</div><div class="name">母婴媒体</div></div>
+                <div class="media-item"><div class="icon">🏢</div><div class="name">企业软文</div></div>
+            </div>
+
+            <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📋 内容分发平台</h3>
+            <div class="media-grid">
+                <div class="media-item"><div class="icon">📝</div><div class="name">百家号</div></div>
+                <div class="media-item"><div class="icon">📰</div><div class="name">搜狐号</div></div>
+                <div class="media-item"><div class="icon">📧</div><div class="name">网易号</div></div>
+                <div class="media-item"><div class="icon">🐧</div><div class="name">企鹅号</div></div>
+                <div class="media-item"><div class="icon">📮</div><div class="name">今日头条</div></div>
+                <div class="media-item"><div class="icon">🔷</div><div class="name">大风号</div></div>
+                <div class="media-item"><div class="icon">🔶</div><div class="name">UC号</div></div>
+                <div class="media-item"><div class="icon">📱</div><div class="name">一点资讯</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="geo-section" id="geo">
+        <div class="section-container">
+            <div class="geo-content">
+                <div class="geo-text">
+                    <span class="section-tag">AI时代的品牌必争之地</span>
+                    <h2>什么是 <span>GEO</span>？</h2>
+                    <p>
+                        当用户从"搜索"转向"提问"，品牌传播的战场已转移至AI生成引擎。GEO（Generative Engine Optimization）让你的品牌在AI回答中主动被推荐。
+                    </p>
+                    <p>
+                        我们通过品牌收录优化、问答内容埋伏、信任状植入、舆情正向引导四大核心服务，帮助企业在AI时代建立品牌认知优势。
+                    </p>
+                    <div class="geo-tags">
+                        <span class="geo-tag">品牌收录优化</span>
+                        <span class="geo-tag">问答内容埋伏</span>
+                        <span class="geo-tag">信任状植入</span>
+                        <span class="geo-tag">舆情正向引导</span>
+                        <span class="geo-tag">秘塔AI</span>
+                        <span class="geo-tag">Perplexity</span>
+                        <span class="geo-tag">Kimi</span>
+                        <span class="geo-tag">文心一言</span>
+                        <span class="geo-tag">通义千问</span>
+                        <span class="geo-tag">讯飞星火</span>
+                    </div>
+                </div>
+                <div class="geo-visual">
+                    <img src="images/geo-concept.png" alt="GEO概念图">
+                    <div class="geo-ai-text">
+                        <div class="big-ai">GEO</div>
+                        <p>Generative Engine Optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases" id="cases">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">服务案例</span>
+                <h2 class="section-title">精选项目展示</h2>
+                <p class="section-desc">涵盖科技、金融、游戏、消费品等多个行业</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/case-xiaohongshu.png" alt="舆情监测案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">危机公关</span>
+                        <h3>自动驾驶企业上市舆情监测</h3>
+                        <p>为美股/港股上市企业提供24小时全网舆情监测与危机响应，维护企业正面形象及声誉。</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/case-game.png" alt="IP联动案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">整合营销</span>
+                        <h3>国民级动画IP联动推广</h3>
+                        <p>某手游与国民级动画联动，抖音&小红书达人整合营销，以"视觉还原+情感叙事"引爆IP粉丝圈。</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/crisis-pr.png" alt="媒体报道案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">新闻发布</span>
+                        <h3>全媒体矩阵传播</h3>
+                        <p>整合央媒、门户、垂直媒体资源，实现新闻通稿全网覆盖，打造"引爆+沉淀"传播闭环。</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/press-scene.png" alt="品牌合作案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">年度合作</span>
+                        <h3>原创潮玩品牌全媒体矩阵</h3>
+                        <p>深度IP赋能+全媒体矩阵曝光，打破圈层壁垒，深化品牌形象，实现品牌资产沉淀。</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/toycity.png" alt="潮玩案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">新品发布</span>
+                        <h3>TOYCITY潮玩新品上市传播</h3>
+                        <p>为TOYCITY玩具城市提供新品上市的社交媒体预热、达人种草及话题营销，实现全网声量爆破。</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">
+                        <img src="images/ai-content.png" alt="AI内容案例">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">AI赋能</span>
+                        <h3>某科技企业GEO优化项目</h3>
+                        <p>通过AI内容生产+多平台分发，优化品牌在Kimi、文心一言等平台的收录与推荐排名。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-icon">📞</div>
+            <h2>开始合作</h2>
+            <p>无论是品牌传播、舆情监测还是GEO优化<br>我们都准备就绪</p>
+            <a href="tel:15942075958" class="contact-phone">15942075958</a>
+            <p class="contact-wechat">微信同号</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>加个钟</h3>
+                <p>不止是传播，更是企业品牌的内容合伙人。专注品牌整合传播，助力企业穿透传播深水区。</p>
+            </div>
+            <div class="footer-col">
+                <h4>服务</h4>
+                <ul>
+                    <li><a href="#services">KOL运营</a></li>
+                    <li><a href="#services">新闻发布</a></li>
+                    <li><a href="#services">危机公关</a></li>
+                    <li><a href="#geo">GEO优化</a></li>
+                    <li><a href="#services">AI内容</a></li>
+                    <li><a href="#services">品牌咨询</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#about">简介</a></li>
+                    <li><a href="#media">媒介</a></li>
+                    <li><a href="#cases">案例</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>语言</h4>
+                <ul>
+                    <li><a href="index.html">中文</a></li>
+                    <li><a href="en/index.html">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 深圳加个钟文化传播有限公司 | AI时代的传播新态体</p>
+        </div>
+    </footer>
+</body>
+</html>

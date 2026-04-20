@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JiaGeZhong | AI Era Communication New Normal</title>
+    <meta name="description" content="Shenzhen JiaGeZhong Cultural Communication - Brand Vision Design | Product Storytelling | KOL Ecosystem | GEO Generative Engine Optimization">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A855F7;
+            --pink: #EC4899;
+            --text: #1a1a2e;
+            --text-light: #64748b;
+            --bg: #FEFEFE;
+            --bg-light: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --gradient-warm: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFE66D 100%);
+            --gradient-cool: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            --gradient-vibe: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #FF6B6B 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: var(--bg-light);
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+        }
+
+        .lang-switch a {
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .lang-switch a.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch a:not(.active) {
+            color: var(--text-light);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: var(--bg);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: 
+                radial-gradient(ellipse, rgba(255, 107, 107, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            border: 1px solid rgba(255,107,107,0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-slogan {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--gradient-warm);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--text);
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .about {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1));
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--purple);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-light);
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text h2 span {
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            background: var(--gradient-vibe);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .about-visual .big-text {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .about-visual p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-warm);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .geo-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--bg) 0%, rgba(168,85,247,0.05) 50%, var(--bg) 100%);
+        }
+
+        .geo-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .geo-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .geo-text h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .geo-text h2 span {
+            background: var(--gradient-vibe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .geo-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .geo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .geo-tag {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--purple);
+            font-weight: 500;
+        }
+
+        .geo-visual {
+            position: relative;
+            height: 380px;
+            background: var(--gradient-vibe);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .geo-ai-text {
+            text-align: center;
+            color: white;
+        }
+
+        .geo-ai-text .big-ai {
+            font-size: 5rem;
+            font-weight: 900;
+        }
+
+        .geo-ai-text p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .cases {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .case-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .case-img {
+            height: 160px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .case-card:nth-child(2) .case-img {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+        }
+
+        .case-card:nth-child(3) .case-img {
+            background: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+        }
+
+        .case-card:nth-child(4) .case-img {
+            background: linear-gradient(135deg, #FFE66D 0%, #FF8E53 100%);
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .case-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--bg);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-warm);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-phone {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--gradient-warm);
+            color: white;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-phone:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .contact-wechat {
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">JiaGeZhong</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="lang-switch">
+                    <a href="../index.html">中文</a>
+                    <a href="index.html" class="active">EN</a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 AI Era Communication New Normal</div>
+            <h1>JiaGeZhong</h1>
+            <p class="hero-slogan">Brand Vision Design | Product Storytelling | KOL Ecosystem | B2B2C Communication</p>
+            <p class="hero-desc">
+                Shenzhen JiaGeZhong Cultural Communication Co., Ltd. Founded in 2017. Beyond Communication. We're Your Content Partner. Specialized in efficient integrated brand communication solutions for enterprise clients.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Work With Us</a>
+                <a href="#services" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Media Resources</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">AI Platforms</div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">About JiaGeZhong</span>
+                <h2 class="section-title">Beyond Communication</h2>
+                <p class="section-desc">We're Your Content Partner</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>We Are <span>JiaGeZhong</span></h2>
+                    <p>Shenzhen JiaGeZhong Cultural Communication Co., Ltd. was founded in 2017, with extensive experience in brand management and communication.</p>
+                    <p>Our business covers digital creative content, precise word-of-mouth communication, social event marketing, social media operations, and brand reputation management.</p>
+                    <p>We have served IT enterprises during IPOs, startups during funding rounds, and financial companies at Series C. With multiple crisis PR experiences, we've helped several enterprises develop IPO communication strategies.</p>
+                </div>
+                <div class="about-visual">
+                    <div class="big-text">2017</div>
+                    <p>Founded in Shenzhen · Serving Nationwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Four Core Strengths</h2>
+                <p class="section-desc">We Understand Technology, Industry, and Communication</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>KOL/KOC Multi-Channel Operation</h3>
+                    <p>Coverage across Douyin, Xiaohongshu, WeChat Video, Zhihu, Weibo, Bilibili, and more. One-stop co-creation driven service from strategy to execution.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📰</div>
+                    <h3>Press Release · Full Media Matrix</h3>
+                    <p>Resources include Central Government Media, Party Media, News Portals, Industry Media, and Financial Platforms. Full-network coverage with "Ignition to Sedimentation" full-chain communication.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Crisis PR · 24/7 Rapid Response</h3>
+                    <p>Round-the-clock full-network sentiment monitoring. Experience supporting US/HK listed companies with crisis early warning, rapid response, and reputation management.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>GEO · AI Search Optimization</h3>
+                    <p>The brand's new battlefield in the AI era. Ensure AI "knows" and "remembers" your brand. Coverage across Metaso, Perplexity, Kimi, Wenxin Yiyan, and 10+ platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="geo-section" id="geo">
+        <div class="section-container">
+            <div class="geo-content">
+                <div class="geo-text">
+                    <span class="section-tag">Brand's New Battlefield in AI Era</span>
+                    <h2>What is <span>GEO</span>?</h2>
+                    <p>
+                        As users shift from "searching" to "asking", the battlefield has moved to AI generation engines. GEO (Generative Engine Optimization) ensures your brand is proactively recommended in AI answers.
+                    </p>
+                    <p>
+                        Through four core services — Brand Indexing Optimization, Q&A Content Embedding, Credibility Injection, and Sentiment Positive Guidance — we help enterprises build brand recognition advantages in the AI era.
+                    </p>
+                    <div class="geo-tags">
+                        <span class="geo-tag">Brand Indexing</span>
+                        <span class="geo-tag">Q&A Embedding</span>
+                        <span class="geo-tag">Credibility Injection</span>
+                        <span class="geo-tag">Sentiment Guidance</span>
+                        <span class="geo-tag">Metaso</span>
+                        <span class="geo-tag">Perplexity</span>
+                        <span class="geo-tag">Kimi</span>
+                        <span class="geo-tag">Wenxin Yiyan</span>
+                    </div>
+                </div>
+                <div class="geo-visual">
+                    <div class="geo-ai-text">
+                        <div class="big-ai">GEO</div>
+                        <p>Generative Engine Optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases" id="cases">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Selected Projects</h2>
+                <p class="section-desc">Spanning technology, finance, gaming, consumer goods, and more</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-img">🚗</div>
+                    <div class="case-content">
+                        <span class="case-tag">Crisis PR</span>
+                        <h3>Autonomous Driving IPO Sentiment</h3>
+                        <p>24/7 full-network sentiment monitoring and crisis response for US/HK listed autonomous driving company.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">🎮</div>
+                    <div class="case-content">
+                        <span class="case-tag">Integrated Marketing</span>
+                        <h3>National IP Co-Brand Campaign</h3>
+                        <p>Douyin & Xiaohongshu influencer integration for mobile game × national animation collaboration.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">📱</div>
+                    <div class="case-content">
+                        <span class="case-tag">Annual Partnership</span>
+                        <h3>Designer Toy Brand Media Matrix</h3>
+                        <p>Deep IP empowerment + full media matrix exposure, breaking circle barriers and building brand equity.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img">⭐</div>
+                    <div class="case-content">
+                        <span class="case-tag">Celebrity Endorsement</span>
+                        <h3>Gong Jun × Health Brand Campaign</h3>
+                        <p>Overall promotion strategy for celebrity endorsement following "Word of Honor" breakout success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-icon">📞</div>
+            <h2>Start Your Project</h2>
+            <p>Ready for brand communication<br>sentiment monitoring or GEO optimization</p>
+            <a href="tel:15942075958" class="contact-phone">+86 15942075958</a>
+            <p class="contact-wechat">WeChat: Same Number</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>JiaGeZhong</h3>
+                <p>Beyond Communication. We're Your Content Partner. Specialized in integrated brand communication, helping enterprises penetrate the deep waters of communication.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">KOL Operation</a></li>
+                    <li><a href="#services">Press Release</a></li>
+                    <li><a href="#services">Crisis PR</a></li>
+                    <li><a href="#geo">GEO Optimization</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Language</h4>
+                <ul>
+                    <li><a href="../index.html">中文</a></li>
+                    <li><a href="index.html">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Shenzhen JiaGeZhong Cultural Communication Co., Ltd. | AI Era Communication New Normal</p>
+        </div>
+    </footer>
+</body>
+</html>
