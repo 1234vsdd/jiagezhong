@@ -166,10 +166,13 @@
         }
 
         .hero-slogan {
-            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             color: var(--text-light);
             margin-bottom: 1.5rem;
             font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .hero-desc {
@@ -459,7 +462,17 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        .media-item .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .media-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+        }
         .media-item .name { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
 
         .geo-section {
@@ -733,6 +746,48 @@
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
         }
+
+        /* Comprehensive Mobile Fixes */
+        @media (max-width: 480px) {
+            .hero { padding: 6rem 1rem 3rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-slogan { 
+                font-size: 0.95rem !important;
+                white-space: normal !important;
+                line-height: 1.5;
+            }
+            .hero-cta { flex-direction: column; gap: 0.8rem; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; padding: 0 1rem; }
+            .stat-number { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .geo-content { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .media-grid { 
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
+            }
+            .media-item { padding: 0.8rem 0.4rem; }
+            .media-item .icon { width: 36px; height: 36px; }
+            .media-item .icon svg { width: 24px; height: 24px; }
+            .media-item .name { font-size: 0.7rem; }
+            .footer-content { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+            .footer-col ul { padding: 0; }
+            .contact-content { padding: 2rem 1rem; }
+            .contact-phone { font-size: 1.2rem; }
+            .cases-grid { gap: 1rem; }
+            .case-content { padding: 1rem; }
+            .case-content h3 { font-size: 1rem; }
+            .case-content p { font-size: 0.85rem; }
+        }
+
+        @media (max-width: 320px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-slogan { font-size: 0.85rem !important; }
+            .media-grid { grid-template-columns: repeat(3, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -780,8 +835,12 @@
             <div class="stat-label">服务客户</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">媒介资源</div>
+            <div class="stat-number">100+</div>
+            <div class="stat-label">个渠道自媒体</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10000+</div>
+            <div class="stat-label">新闻媒体</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">10+</div>
@@ -870,14 +929,14 @@
 
             <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📱 社交媒体</h3>
             <div class="media-grid" style="margin-bottom:2rem;">
-                <div class="media-item"><div class="icon">📺</div><div class="name">抖音</div></div>
-                <div class="media-item"><div class="icon">📕</div><div class="name">小红书</div></div>
-                <div class="media-item"><div class="icon">🎬</div><div class="name">视频号</div></div>
-                <div class="media-item"><div class="icon">💬</div><div class="name">微博</div></div>
-                <div class="media-item"><div class="icon">💙</div><div class="name">微信</div></div>
-                <div class="media-item"><div class="icon">🎥</div><div class="name">B站</div></div>
-                <div class="media-item"><div class="icon">❓</div><div class="name">知乎</div></div>
-                <div class="media-item"><div class="icon">📺</div><div class="name">快手</div></div>
+                <div class="media-item"><div class="icon" style="background:#FE2C55;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-2.09-.01-4.18 0-6.27.05-1.3.68-2.5 1.73-3.33 1.06-.83 2.47-1.08 3.76-.77.65.15 1.26.46 1.79.87.53-.17 1.08-.3 1.62-.37-1.55-.06-3.11-.03-4.66.02-1.54.05-3.09.21-4.59.61z"/></svg></div><div class="name">抖音</div></div>
+                <div class="media-item"><div class="icon" style="background:#FE2C55;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div><div class="name">小红书</div></div>
+                <div class="media-item"><div class="icon" style="background:#07C160;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M8.69 13.3c-.36-.16-.77-.24-1.19-.24-.23 0-.45.03-.66.09-.21.06-.4.15-.57.26-.17.11-.31.25-.42.41-.11.16-.17.35-.17.56h3.02c0-.48.12-.84.35-1.08zM21 12c0-4.97-4.03-9-9-9S3 7.03 3 12c0 2.37 1.02 4.52 2.64 6.08L4.29 21.7c-.18.36-.01.8.37.98.15.07.31.1.47.1.27 0 .53-.11.71-.3l2.67-2.36C10.41 21.28 12 18.75 12 15.75c0-1.13.23-2.21.64-3.19l-2.59 3.83c-.36.53-.08 1.23.52 1.35.15.03.31.01.45-.06l4.53-2.69c.44.39.95.72 1.5.98.19.09.39.13.59.13.2 0 .39-.04.58-.12.18-.08.34-.19.47-.33.13-.14.23-.31.3-.49.07-.18.11-.37.11-.57V12h.5c1.93 0 3.5-1.57 3.5-3.5S20.93 5 19 5H5c-1.93 0-3.5 1.57-3.5 3.5 0 .86.31 1.64.82 2.24l-1.45 1.45C.31 11.31 0 10.69 0 10c0-4.97 4.03-9 9-9s9 4.03 9 9c0 .45-.04.89-.12 1.32l1.61 1.61c.44-.31.94-.56 1.47-.73.18-.06.37-.09.56-.09.19 0 .38.03.56.09.44.15.84.37 1.19.65.17.14.32.3.44.47.12.17.21.36.27.56.06.2.09.41.09.62V12z"/></svg></div><div class="name">微信</div></div>
+                <div class="media-item"><div class="icon" style="background:#FF8200;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M10.98 19.5c-.37 0-.72-.19-.93-.49L7.95 16c-.24-.34-.13-.8.24-1.04.34-.24.8-.13 1.04.24l1.67 2.44c2.33-.91 4.89-2.71 6.67-5.21-.54-.76-1.04-1.58-1.5-2.44-.15-.29-.43-.49-.75-.53-.32-.04-.64.08-.83.32-1.34 1.68-3.11 2.95-5.19 3.69-.29.1-.47.38-.47.69v.98c0 .41.33.74.74.74h2.7c.41 0 .74-.33.74-.74v-.55zM21.02 9.5c-.14-.89-.5-1.74-1.06-2.48-.19-.25-.5-.38-.81-.36-.31.02-.59.19-.75.45-.63.97-1.03 2.07-1.17 3.21-.05.39.07.78.33 1.07.26.29.63.46 1.02.47h.08c.95-.01 1.83-.39 2.48-1.06.18-.18.29-.42.32-.67.02-.25-.04-.5-.17-.72-.13-.22-.32-.4-.54-.51-.22-.11-.46-.17-.71-.16-.25.01-.49.1-.69.26z"/></svg></div><div class="name">微博</div></div>
+                <div class="media-item"><div class="icon" style="background:#00A1D6;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M17.12 10.05a3.5 3.5 0 0 0-3.34 1.93c.09-.68.13-1.38.13-2.08 0-3.87-1.68-7.33-4.36-9.63-.38-.33-.94-.26-1.24.12-.3.38-.26.94.12 1.24C11.33 3.3 13.2 4.9 13.2 8.7c0 .56-.05 1.11-.15 1.64-.03.16-.05.32-.05.49 0 .69.2 1.36.56 1.92.24.38.36.83.36 1.28v2.38c0 .55.45 1 1 1s1-.45 1-1v-1.75c0-.63.12-1.25.37-1.83.23-.55.58-1.05 1.02-1.47a4.2 4.2 0 0 0 1.48-2.93c0-.34-.04-.67-.11-.99-.14-.58-.6-.73-.6-.73z"/><path d="M21.56 10.39c-.02-.13-.07-.26-.14-.38-.15-.27-.39-.47-.69-.56-.3-.09-.62-.06-.91.05-.14.05-.27.13-.37.22-.03.03-.06.06-.09.08-.24.19-.32.51-.2.79.12.28.39.46.69.46.08 0 .16-.01.24-.04.29-.1.49-.26.58-.37.03-.04.06-.08.09-.12.19-.3.54-.48.89-.48h.02c.34.02.64.19.83.45.19.26.26.59.18.91-.08.32-.29.59-.58.75-.29.16-.64.2-.95.1-.31-.1-.56-.32-.7-.61-.07-.14-.1-.29-.1-.45 0-.16.03-.32.1-.47z"/></svg></div><div class="name">B站</div></div>
+                <div class="media-item"><div class="icon" style="background:#0087FF;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></div><div class="name">知乎</div></div>
+                <div class="media-item"><div class="icon" style="background:#FF4906;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.83 0-1.5-.67-1.5-1.5S11.17 12 12 12s1.5.67 1.5 1.5S12.83 17 12 17zm2.5-4.5h-2v2h-1v-2h-2v-1h2V9h1v2h2v1z"/></svg></div><div class="name">快手</div></div>
+                <div class="media-item"><div class="icon" style="background:#07C160;"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="2" fill="none"/><path d="M8 10l4 3-4 3z" fill="white"/></svg></div><div class="name">视频号</div></div>
             </div>
 
             <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📰 新闻媒体</h3>
@@ -898,14 +957,14 @@
 
             <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1.2rem; color:var(--text);">📋 内容分发平台</h3>
             <div class="media-grid">
-                <div class="media-item"><div class="icon">📝</div><div class="name">百家号</div></div>
-                <div class="media-item"><div class="icon">📰</div><div class="name">搜狐号</div></div>
-                <div class="media-item"><div class="icon">📧</div><div class="name">网易号</div></div>
-                <div class="media-item"><div class="icon">🐧</div><div class="name">企鹅号</div></div>
-                <div class="media-item"><div class="icon">📮</div><div class="name">今日头条</div></div>
-                <div class="media-item"><div class="icon">🔷</div><div class="name">大风号</div></div>
-                <div class="media-item"><div class="icon">🔶</div><div class="name">UC号</div></div>
-                <div class="media-item"><div class="icon">📱</div><div class="name">一点资讯</div></div>
+                <div class="media-item"><div class="icon" style="background:#4E6CFC;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg></div><div class="name">百家号</div></div>
+                <div class="media-item"><div class="icon" style="background:#CC2222;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></div><div class="name">搜狐号</div></div>
+                <div class="media-item"><div class="icon" style="background:#E63333;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H5c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg></div><div class="name">网易号</div></div>
+                <div class="media-item"><div class="icon" style="background:#3DBE68;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12.48 10.67c-.29.06-.6.1-.93.1-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3c0 1.05-.55 1.98-1.39 2.56l-.68.37zm1.52-3.97c-.83-.45-1.83-.72-2.93-.72-1.55 0-2.93.63-3.93 1.64-.26.26-.48.56-.68.88C5.58 9.9 5 11.36 5 13c0 3.31 2.69 6 6 6 .86 0 1.68-.18 2.42-.51.37.21.79.34 1.23.34 1.66 0 3-1.34 3-3s-1.34-3-3-3c-.36 0-.7.06-1.02.17l-.73-1.01zM19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></div><div class="name">企鹅号</div></div>
+                <div class="media-item"><div class="icon" style="background:#F85959;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="name">今日头条</div></div>
+                <div class="media-item"><div class="icon" style="background:#FF6600;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></div><div class="name">大风号</div></div>
+                <div class="media-item"><div class="icon" style="background:#FF7F00;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12 6l-4 8h8l-4-8z"/></svg></div><div class="name">UC号</div></div>
+                <div class="media-item"><div class="icon" style="background:#007AFF;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm3-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg></div><div class="name">一点资讯</div></div>
             </div>
         </div>
     </section>
