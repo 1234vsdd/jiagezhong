@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jiagezhongnogaga.xin/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
