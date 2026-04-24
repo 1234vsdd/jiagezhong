@@ -1,8 +1,35 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jiagezhongnogaga.xin/sitemap.xml
+# AI Bots - Critical for GEO/AEO
+User-agent: GPTBot
+Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Traditional Search Bots
 User-agent: Googlebot
 Allow: /
 
@@ -17,3 +44,8 @@ Allow: /
 
 User-agent: 360Spider
 Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+Sitemap: https://jiagezhongnogaga.xin/sitemap.xml

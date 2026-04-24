@@ -1,0 +1,92 @@
+<!-- 请将此JSON-LD代码添加到 index.html 的 <head> 标签内 -->
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "深圳加个钟文化传播有限公司",
+  "alternateName": "加个钟",
+  "url": "https://jiagezhongnogaga.xin",
+  "logo": "https://jiagezhongnogaga.xin/images/logo.png",
+  "description": "加个钟成立于2017年，专注为企业提供品牌整合传播服务，包括上市/危机公关、媒介对接、SEO/GEO、舆情舆论引导、KOL生态运营、B2B2C传播穿透。",
+  "foundingDate": "2017",
+  "foundingLocation": "深圳",
+  "areaServed": "中国",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["Chinese", "English"]
+  },
+  "sameAs": [
+    "https://www.example.com/weixin",
+    "https://www.example.com/weibo"
+  ]
+}
+</script>
+
+<!-- WebSite Schema with SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "加个钟 | AI时代的传播新态体",
+  "url": "https://jiagezhongnogaga.xin",
+  "description": "深圳加个钟文化传播 - 上市/危机公关 | 媒介对接 | SEO/GEO | 舆情舆论引导 | KOL生态运营 | B2B2C传播穿透",
+  "publisher": {
+    "@type": "Organization",
+    "name": "深圳加个钟文化传播有限公司"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://jiagezhongnogaga.xin/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什么是GEO？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO（Generative Engine Optimization）生成式引擎优化，是一种让品牌在AI搜索结果中被主动推荐的技术。通过品牌收录优化、问答内容埋伏、信任状植入、舆情正向引导等服务，帮助企业在AI时代建立品牌认知优势。",
+        "author": {
+          "@type": "Organization",
+          "name": "加个钟"
+        }
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "加个钟提供哪些服务？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "加个钟提供六大核心服务：1) KOL/KOC全渠道运营 2) 新闻发布·全媒体矩阵 3) 危机公关·快速响应 4) GEO·AI搜索优化 5) AI内容生产 6) 品牌策略咨询。",
+        "author": {
+          "@type": "Organization",
+          "name": "加个钟"
+        }
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "加个钟成立于什么时候？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "深圳加个钟文化传播有限公司成立于2017年，总部位于深圳，服务全国企业。拥有8年行业经验、100+服务客户、100+渠道自媒体、10000+新闻媒体资源。",
+        "author": {
+          "@type": "Organization",
+          "name": "加个钟"
+        }
+      }
+    }
+  ]
+}
+</script>
