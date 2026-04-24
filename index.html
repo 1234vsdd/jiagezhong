@@ -511,6 +511,102 @@
             line-height: 1.7;
         }
 
+        .service-card .service-desc {
+            position: relative;
+            max-height: 4.5em;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .service-card .service-desc.expanded {
+            max-height: 2000px;
+        }
+
+        .service-card .service-desc::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2em;
+            background: linear-gradient(transparent, var(--bg-card));
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .service-card .service-desc.expanded::after {
+            opacity: 0;
+        }
+
+        .service-card .read-more {
+            color: var(--purple);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+
+        .service-card .read-more::before {
+            content: '▶';
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .service-card .service-desc.expanded + .read-more::before {
+            transform: rotate(90deg);
+        }
+
+        .service-card .service-desc {
+            position: relative;
+            max-height: 4.5em;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-card .service-desc.expanded {
+            max-height: 2000px;
+        }
+
+        .service-card .service-desc::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2em;
+            background: linear-gradient(transparent, var(--bg-card));
+            transition: opacity 0.3s;
+        }
+
+        .service-card .service-desc.expanded::after {
+            opacity: 0;
+        }
+
+        .service-card .read-more {
+            color: var(--purple);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+
+        .service-card .read-more::before {
+            content: '▶';
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .service-card .service-desc.expanded + .read-more::before {
+            transform: rotate(90deg);
+        }
+
         .media {
             padding: 6rem 2rem;
             background: var(--bg-light);
@@ -993,37 +1089,44 @@
                 <p class="section-desc">懂技术、懂产业、懂传播</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">🎯</div>
                     <h3>KOL/KOC 全渠道运营</h3>
-                    <p>加个钟提供全面的KOL/KOC全渠道运营服务，覆盖抖音、小红书、视频号、知乎、微博、微信、B站等国内主流平台，以及Instagram、YouTube、TikTok等海外社交媒体。我们建立了覆盖头部明星、知名KOL、中腰部达人在内的完整资源网络，累计合作达人10000+位，覆盖粉丝总量超过8亿。服务范围包括：账号定位与内容策划、KOL筛选与商务合作、种草笔记/短视频/直播带货、话题营销与事件传播、数据监测与效果优化。通过「策略+创意+执行+数据」四位一体的运营模式，我们已帮助100+品牌实现从0到1的社媒破局，以及从1到N的规模增长。典型案例包括：某国民级动画IP联动推广（抖音小红书整合营销）、某新能源汽车品牌上市传播（话题阅读量超5亿）、某新消费品牌双十一大促（ROI达1:15）。</p>
+                    <div class="service-desc">加个钟提供全面的KOL/KOC全渠道运营服务，覆盖抖音、小红书、视频号、知乎、微博、微信、B站等国内主流平台，以及Instagram、YouTube、TikTok等海外社交媒体。我们建立了覆盖头部明星、知名KOL、中腰部达人在内的完整资源网络，累计合作达人10000+位，覆盖粉丝总量超过8亿。服务范围包括：账号定位与内容策划、KOL筛选与商务合作、种草笔记/短视频/直播带货、话题营销与事件传播、数据监测与效果优化。通过「策略+创意+执行+数据」四位一体的运营模式，我们已帮助100+品牌实现从0到1的社媒破局，以及从1到N的规模增长。典型案例包括：某国民级动画IP联动推广（抖音小红书整合营销）、某新能源汽车品牌上市传播（话题阅读量超5亿）、某新消费品牌双十一大促（ROI达1:15）。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">📰</div>
                     <h3>新闻发布 · 全媒体矩阵</h3>
-                    <p>加个钟拥有丰富的媒体资源网络，覆盖央媒、党媒、门户网站、垂直行业媒体、财经媒体、科技媒体、娱乐媒体等全品类媒介。我们与新华社、人民网、中新网、凤凰网、网易、新浪、搜狐、腾讯等主流媒体保持长期合作关系，同时深耕财经、科技、游戏、医疗、宠物、食品饮料等垂直行业媒体资源库，媒体资源总量超过10000+家。服务内容涵盖：新闻通稿撰写与发布、媒体邀请与专访安排专题报道策划与执行、危机公关稿件投放、上市/融资新闻传播、品牌故事深度包装。我们的一站式新闻发布服务已支持50+企业完成上市传播、融资公告、产品发布、行业峰会等关键节点的媒体覆盖，帮助企业实现「一次发布、全网呈现」的高效传播闭环。</p>
+                    <div class="service-desc">加个钟拥有丰富的媒体资源网络，覆盖央媒、党媒、门户网站、垂直行业媒体、财经媒体、科技媒体、娱乐媒体等全品类媒介。我们与新华社、人民网、中新网、凤凰网、网易、新浪、搜狐、腾讯等主流媒体保持长期合作关系，同时深耕财经、科技、游戏、医疗、宠物、食品饮料等垂直行业媒体资源库，媒体资源总量超过10000+家。服务内容涵盖：新闻通稿撰写与发布、媒体邀请与专访安排、专题报道策划与执行、危机公关稿件投放、上市/融资新闻传播、品牌故事深度包装。我们的一站式新闻发布服务已支持50+企业完成上市传播、融资公告、产品发布、行业峰会等关键节点的媒体覆盖，帮助企业实现「一次发布、全网呈现」的高效传播闭环。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">🛡️</div>
                     <h3>危机公关 · 快速响应</h3>
-                    <p>加个钟提供7×24小时全网舆情监测与危机公关服务，曾为美股上市企业、港股上市企业、金融科技公司提供全程危机公关支持。我们累计处理危机公关案例50+，典型场景包括：上市前后舆情监控与风险排查、负面报道快速响应与舆论引导、竞品恶意攻击防御与反击、产品质量/安全事故危机处理、高管言论失当公关应对。我们具备完整的危机预警体系：包括全网关键词监测、社交媒体声量追踪、新闻媒体报道预警、竞品舆情动态分析。在危机发生时，我们能在30分钟内启动响应机制，提供舆情分析报告、应对策略建议、媒体沟通方案、正面粉声量建设方案，以及负面信息压制与删除服务。我们的危机公关团队拥有丰富的IPO护航经验，深谙资本市场舆情管理之道。</p>
+                    <div class="service-desc">加个钟提供7×24小时全网舆情监测与危机公关服务，曾为美股上市企业、港股上市企业、金融科技公司提供全程危机公关支持。我们累计处理危机公关案例50+，典型场景包括：上市前后舆情监控与风险排查、负面报道快速响应与舆论引导、竞品恶意攻击防御与反击、产品质量/安全事故危机处理、高管言论失当公关应对。我们具备完整的危机预警体系：包括全网关键词监测、社交媒体声量追踪、新闻媒体报道预警、竞品舆情动态分析。在危机发生时，我们能在30分钟内启动响应机制，提供舆情分析报告、应对策略建议、媒体沟通方案、正面粉声量建设方案，以及负面信息压制与删除服务。我们的危机公关团队拥有丰富的IPO护航经验，深谙资本市场舆情管理之道。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">🤖</div>
                     <h3>GEO · AI搜索优化</h3>
-                    <p>GEO（Generative Engine Optimization）是AI时代的新型营销方式，帮助品牌在ChatGPT、Perplexity、Kimi、文心一言、通义千问、秘塔AI、讯飞星火等10+主流AI平台获得更多曝光和引用。加个钟的GEO服务包括：品牌在AI引擎中的收录优化，确保当用户询问相关问题时品牌能被AI提及；问答内容埋伏，在AI可能回答的问题中植入品牌信息；信任状植入，通过内容优化让AI引用企业的正面数据、资质、案例；舆情正向引导，确保AI回答中呈现的品牌形象积极正面。我们已完成20+企业的GEO优化项目，帮助客户在AI搜索结果中的品牌提及率提升300%以上。GEO与SEO双管齐下，能帮助品牌在传统搜索引擎和AI引擎两个战场同时建立优势，实现「搜索+提问」全场景覆盖。</p>
+                    <div class="service-desc">GEO（Generative Engine Optimization）是AI时代的新型营销方式，帮助品牌在ChatGPT、Perplexity、Kimi、文心一言、通义千问、秘塔AI、讯飞星火等10+主流AI平台获得更多曝光和引用。加个钟的GEO服务包括：品牌在AI引擎中的收录优化，确保当用户询问相关问题时品牌能被AI提及；问答内容埋伏，在AI可能回答的问题中植入品牌信息；信任状植入，通过内容优化让AI引用企业的正面数据、资质、案例；舆情正向引导，确保AI回答中呈现的品牌形象积极正面。我们已完成20+企业的GEO优化项目，帮助客户在AI搜索结果中的品牌提及率提升300%以上。GEO与SEO双管齐下，能帮助品牌在传统搜索引擎和AI引擎两个战场同时建立优势，实现「搜索+提问」全场景覆盖。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">✨</div>
                     <h3>AI内容生产</h3>
-                    <p>加个钟运用前沿AI技术辅助内容生产，大幅提升内容创作效率。我们运用ChatGPT、Claude、文心一言、通义千问等大语言模型，结合自有创意团队，为企业提供：品牌文案、广告语、新闻通稿、产品描述、社交媒体内容、SEO文章等文本内容生产；中文、英文、日文、韩文等多语言翻译与本地化；视频脚本、活动方案、PPT大纲等结构化内容生成；品牌故事、创始人专访、案例包装等深度内容策划。我们将AI内容生产周期缩短30%-50%，同时通过「AI初稿+人工审核+优化润色」的三层质量把控，确保内容既有速度又有温度。已服务过的内容类型涵盖：科技产品发布、金融产品介绍、消费品牌种草、企业PR新闻、危机公关声明、行业白皮书等。全程保密协议，支持批量内容生产交付。</p>
+                    <div class="service-desc">加个钟运用前沿AI技术辅助内容生产，大幅提升内容创作效率。我们运用ChatGPT、Claude、文心一言、通义千问等大语言模型，结合自有创意团队，为企业提供：品牌文案、广告语、新闻通稿、产品描述、社交媒体内容、SEO文章等文本内容生产；中文、英文、日文、韩文等多语言翻译与本地化；视频脚本、活动方案、PPT大纲等结构化内容生成；品牌故事、创始人专访、案例包装等深度内容策划。我们将AI内容生产周期缩短30%-50%，同时通过「AI初稿+人工审核+优化润色」的三层质量把控，确保内容既有速度又有温度。已服务过的内容类型涵盖：科技产品发布、金融产品介绍、消费品牌种草、企业PR新闻、危机公关声明、行业白皮书等。全程保密协议，支持批量内容生产交付。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="this.querySelector('.service-desc').classList.toggle('expanded'); this.querySelector('.read-more').textContent = this.querySelector('.service-desc').classList.contains('expanded') ? '收起详情' : '展开详情';">
                     <div class="service-icon">📊</div>
                     <h3>品牌策略咨询</h3>
-                    <p>加个钟的品牌策略咨询服务从品牌定位、叙事挖掘、传播路径设计三个维度入手，为企业量身定制品牌传播方案。我们的服务涵盖：品牌战略规划——明确品牌使命、愿景、价值观，确定目标受众，梳理品牌核心竞争优势；品牌叙事设计——挖掘品牌故事，提炼品牌差异化卖点，构建品牌内容体系；传播路径规划——制定年度传播日历，规划不同阶段的传播重点、渠道选择、预算分配；品牌声誉管理——建立品牌信任状体系，制定危机预警与应对预案；品牌效果评估——通过数据指标监测传播效果，持续优化策略方向。我们曾帮助某科技企业完成品牌升级焕新，帮助其从B端技术供应商转型为C端消费品牌，品牌认知度3个月内提升200%；也曾为某金融机构设计上市传播策略，助力其IPO路演获得机构投资者广泛认可。</p>
+                    <div class="service-desc">加个钟的品牌策略咨询服务从品牌定位、叙事挖掘、传播路径设计三个维度入手，为企业量身定制品牌传播方案。我们的服务涵盖：品牌战略规划——明确品牌使命、愿景、价值观，确定目标受众，梳理品牌核心竞争优势；品牌叙事设计——挖掘品牌故事，提炼品牌差异化卖点，构建品牌内容体系；传播路径规划——制定年度传播日历，规划不同阶段的传播重点、渠道选择、预算分配；品牌声誉管理——建立品牌信任状体系，制定危机预警与应对预案；品牌效果评估——通过数据指标监测传播效果，持续优化策略方向。我们曾帮助某科技企业完成品牌升级焕新，帮助其从B端技术供应商转型为C端消费品牌，品牌认知度3个月内提升200%；也曾为某金融机构设计上市传播策略，助力其IPO路演获得机构投资者广泛认可。</div>
+                    <span class="read-more">展开详情</span>
                 </div>
             </div>
+
         </div>
     </section>
 
