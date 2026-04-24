@@ -752,6 +752,49 @@
         }
         .media-item .name { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
 
+        .faq-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: rgba(168,85,247,0.2);
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--purple);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
         .geo-section {
             padding: 6rem 2rem;
             background: linear-gradient(180deg, var(--bg) 0%, rgba(168,85,247,0.05) 50%, var(--bg) 100%);
@@ -1292,6 +1335,42 @@
                 <div class="media-item"><div class="icon" style="background:#FF6600;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></div><div class="name">大风号</div></div>
                 <div class="media-item"><div class="icon" style="background:#FF7F00;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12 6l-4 8h8l-4-8z"/></svg></div><div class="name">UC号</div></div>
                 <div class="media-item"><div class="icon" style="background:#007AFF;"><svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm3-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg></div><div class="name">一点资讯</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">常见问题</span>
+                <h2 class="section-title">关于加个钟</h2>
+                <p class="section-desc">您可能想了解的问题</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>加个钟成立于什么时候？</h3>
+                    <p>深圳加个钟文化传播有限公司成立于2017年，在品牌传播、公关营销领域拥有8年+行业经验。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>加个钟主要提供哪些服务？</h3>
+                    <p>我们提供六大核心服务：KOL/KOC全渠道运营、新闻发布·全媒体矩阵、危机公关·快速响应、GEO·AI搜索优化、AI内容生产、品牌策略咨询。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>GEO和SEO有什么区别？</h3>
+                    <p>SEO针对Google/Baidu等搜索引擎优化，GEO针对ChatGPT/Perplexity/Kimi等AI平台。两者可以同时做，实现「搜索+提问」全场景覆盖。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>加个钟服务过哪些客户？</h3>
+                    <p>我们曾服务IT龙头上市企业、创业公司融资、金融企业C轮等客户，涵盖科技、金融、游戏、消费品等多个行业，累计服务100+客户。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>危机公关响应速度如何？</h3>
+                    <p>我们提供7×24小时全网舆情监测，危机发生时能在30分钟内启动响应机制，帮助客户快速应对负面舆情。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何联系加个钟？</h3>
+                    <p>电话/微信：15942075958，邮箱：nogaga@foxmail.com，官网：jiagezhongnogaga.xin</p>
+                </div>
             </div>
         </div>
     </section>
