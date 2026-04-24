@@ -560,6 +560,49 @@
             transform: rotate(90deg);
         }
 
+        .faq-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: rgba(168,85,247,0.2);
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--purple);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
         .geo-section {
             padding: 6rem 2rem;
             background: linear-gradient(180deg, var(--bg) 0%, rgba(168,85,247,0.05) 50%, var(--bg) 100%);
@@ -1129,6 +1172,42 @@
                 </div>
             </div>
 
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">About JiaGeZhong</h2>
+                <p class="section-desc">Common questions about our services</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>When was JiaGeZhong founded?</h3>
+                    <p>Shenzhen JiaGeZhong Cultural Communication Co., Ltd. was founded in 2017, with 8+ years of experience in brand communication and PR marketing.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What services does JiaGeZhong provide?</h3>
+                    <p>We provide six core services: KOL/KOC Omnichannel Operations, Press Release & Full Media Matrix, Crisis PR & Rapid Response, GEO · AI Search Optimization, AI Content Production, and Brand Strategy Consulting.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the difference between GEO and SEO?</h3>
+                    <p>SEO targets search engines like Google/Baidu, while GEO targets AI platforms like ChatGPT/Perplexity/Kimi. Both can be done simultaneously for "Search + Question" full-scenario coverage.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What clients has JiaGeZhong served?</h3>
+                    <p>We have served IT listed companies, startup financing clients, financial companies at Series C, covering technology, finance, gaming, consumer goods and more. 100+ clients served.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How fast is crisis PR response?</h3>
+                    <p>We provide 7×24-hour full-network sentiment monitoring. In crisis situations, we can activate our response mechanism within 30 minutes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to contact JiaGeZhong?</h3>
+                    <p>Phone/WeChat: 15942075958, Email: nogaga@foxmail.com, Website: jiagezhongnogaga.xin</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="geo-section" id="geo">
