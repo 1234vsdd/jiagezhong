@@ -437,31 +437,37 @@
             line-height: 1.7;
         }
 
-        .service-card .service-desc {
+        .service-card {
             position: relative;
-            max-height: 4.5em;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
+        }
+
+        .service-card .service-desc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: 100;
+            background: var(--bg-card);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            max-height: none;
+            overflow: visible;
         }
 
         .service-card .service-desc.expanded {
-            max-height: 2000px;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         .service-card .service-desc::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2em;
-            background: linear-gradient(transparent, var(--bg-card));
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-
-        .service-card .service-desc.expanded::after {
-            opacity: 0;
+            display: none;
         }
 
         .service-card .read-more {
