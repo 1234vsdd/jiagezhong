@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCove - Premium Pet Fashion & Accessories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FF6B35;
+        }
+        
+        .logo span {
+            color: #2D3436;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2D3436;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #FF6B35;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .header-actions a {
+            color: #2D3436;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: #FF6B35;
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF5F0 0%, #FFF9F5 100%);
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+        
+        .hero-content {
+            max-width: 50%;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2D3436;
+        }
+        
+        .hero-content h1 span {
+            color: #FF6B35;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .badge {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .hero-images {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-images img {
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-images img:first-child {
+            transform: translateY(20px);
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 60px 5%;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: #2D3436;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #888;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .category-card {
+            position: relative;
+            height: 250px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .category-card .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+        }
+        
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .category-card p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* Products */
+        .products {
+            padding: 60px 5%;
+            background: #f8f9fa;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #FF6B35;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .product-tag.new {
+            background: #00B894;
+        }
+        
+        .product-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-card:hover .product-actions {
+            opacity: 1;
+        }
+        
+        .product-actions button {
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        
+        .product-actions button:hover {
+            background: #FF6B35;
+            color: white;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            font-size: 12px;
+            color: #FF6B35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D3436;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .product-rating .stars {
+            color: #FFD700;
+        }
+        
+        .product-rating span {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .current-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2D3436;
+        }
+        
+        .old-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .moq {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 60px 5%;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: #FFF5F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+        
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2D3436;
+        }
+        
+        .feature-card p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+            padding: 60px 5%;
+            text-align: center;
+            color: white;
+        }
+        
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+        
+        .newsletter-form button {
+            background: #2D3436;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #1e2526;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2D3436;
+            color: white;
+            padding: 60px 5% 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-about p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .payment-methods span {
+            background: #444;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .category-grid, .product-grid, .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero-images {
+                display: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Pet<span>Cove</span></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="#">Search</a>
+            <a href="#">Cart (0)</a>
+            <a href="#" class="btn-primary">Sign In</a>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Style Your Pet with <span>Love</span></h1>
+            <p>Discover premium pet fashion & accessories. From cozy sweaters to stylish outfits, we bring quality and comfort to your furry friends.</p>
+            <div class="hero-badges">
+                <span class="badge">🐾 8+ Years Experience</span>
+                <span class="badge">📦 Global Shipping</span>
+                <span class="badge">💯 Quality Guaranteed</span>
+            </div>
+            <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+        <div class="hero-images">
+            <img src="images/image-2---8c49d809-a453-409a-a0b6-f200f29a72c9.png" alt="Dog coat">
+            <img src="images/image-3---5229c3d2-b51a-47fd-beb3-47375cb91bc3.png" alt="Dog sweater">
+        </div>
+    </section>
+    
+    <!-- Categories -->
+    <section class="categories">
+        <div class="section-title">
+            <h2>Shop by Category</h2>
+            <p>Find the perfect style for your furry friend</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="images/image-3---25849a8a-d9ec-43a0-9094-25b798c91a9f.png" alt="Coats & Jackets">
+                <div class="overlay">
+                    <h3>Coats & Jackets</h3>
+                    <p>120+ Products</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/image-2---77ff52c7-ef69-47bb-b865-f4ccd92cf0b0.png" alt="Sweaters">
+                <div class="overlay">
+                    <h3>Sweaters & Hoodies</h3>
+                    <p>95+ Products</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/image-3---a42824a9-4b1b-4579-be89-7062beff57ef.png" alt="Accessories">
+                <div class="overlay">
+                    <h3>Accessories</h3>
+                    <p>200+ Products</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/image-4---71e00d25-f675-48f3-9b31-a24a377636cc.png" alt="Costumes">
+                <div class="overlay">
+                    <h3>Costumes</h3>
+                    <p>80+ Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="section-title">
+            <h2>Featured Products</h2>
+            <p>Our most popular picks for your pets</p>
+        </div>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-3---5229c3d2-b51a-47fd-beb3-47375cb91bc3.png" alt="Cozy Knit Sweater">
+                    <span class="product-tag new">New</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Sweaters</p>
+                    <h3 class="product-name">Cozy Knit Dog Sweater - Warm Orange</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(128 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$18.90</span>
+                        <span class="old-price">$24.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-3---25849a8a-d9ec-43a0-9094-25b798c91a9f.png" alt="Waterproof Raincoat">
+                    <span class="product-tag">Hot</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Outerwear</p>
+                    <h3 class="product-name">Waterproof Dog Raincoat - Yellow with Reflective Strip</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(256 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$22.50</span>
+                        <span class="old-price">$29.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-1---32dfa782-83c3-45ed-b298-00bdfe9e1cba.png" alt="Cooling Vest">
+                    <span class="product-tag new">New</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Functional</p>
+                    <h3 class="product-name">Breathable Cooling Vest - Light Blue Mesh</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(89 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$16.80</span>
+                        <span class="old-price">$21.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-1---a713941d-cd2b-4b63-b0d8-8973fea1e97f.png" alt="Plaid Bandana">
+                    <span class="product-tag">Best Seller</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Accessories</p>
+                    <h3 class="product-name">Classic Plaid Dog Bandana Collar - Red</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(312 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$8.50</span>
+                        <span class="old-price">$12.90</span>
+                    </div>
+                    <p class="moq">MOQ: 5 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-4---71e00d25-f675-48f3-9b31-a24a377636cc.png" alt="Halloween Costume">
+                    <span class="product-tag">Seasonal</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Costumes</p>
+                    <h3 class="product-name">Pumpkin Costume for French Bulldog - Halloween Special</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(178 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$15.90</span>
+                        <span class="old-price">$19.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-2---ecedce0a-4870-424e-ae0a-99e88605215b.png" alt="Luxury Carrier">
+                    <span class="product-tag new">New</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Travel</p>
+                    <h3 class="product-name">Luxury Pet Carrier Bag - Pink Leather Design</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(64 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$45.90</span>
+                        <span class="old-price">$59.90</span>
+                    </div>
+                    <p class="moq">MOQ: 1 Piece</p>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-2---8c49d809-a453-409a-a0b6-f200f29a72c9.png" alt="Winter Coat">
+                    <span class="product-tag">Hot</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Outerwear</p>
+                    <h3 class="product-name">Warm Winter Coat - Purple Fluffy Interior</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(203 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$28.90</span>
+                        <span class="old-price">$36.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/image-2---17f0aca9-7b7c-4ff6-b5e3-c6a638a9f61d.png" alt="Raincoat">
+                    <span class="product-tag">Best Seller</span>
+                    <div class="product-actions">
+                        <button>♥</button>
+                        <button>👁</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Outerwear</p>
+                    <h3 class="product-name">All-Season Dog Raincoat - Yellow Waterproof</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(167 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$19.90</span>
+                        <span class="old-price">$25.90</span>
+                    </div>
+                    <p class="moq">MOQ: 2 Pieces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Global Shipping</h3>
+                <p>Ship to 150+ countries worldwide with reliable delivery partners</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Payment</h3>
+                <p>Multiple payment methods with 100% transaction protection</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">↩️</div>
+                <h3>30-Day Returns</h3>
+                <p>Hassle-free returns within 30 days of purchase</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer service for your inquiries</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to get exclusive offers and new product alerts</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>PetCove</h3>
+                <p>Your trusted partner for premium pet fashion and accessories. We are dedicated to bringing style and comfort to pets worldwide with quality products at competitive prices.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns Policy</a>
+                <a href="#">Track Order</a>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <a href="#">Email: info@petcove.com</a>
+                <a href="#">WhatsApp: +86 159 4207 5958</a>
+                <a href="#">WeChat: PetCove_Official</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PetCove. All rights reserved.</p>
+            <div class="payment-methods">
+                <span>PayPal</span>
+                <span>Visa</span>
+                <span>MasterCard</span>
+                <span>AliPay</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
